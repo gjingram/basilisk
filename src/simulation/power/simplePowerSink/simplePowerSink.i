@@ -30,12 +30,12 @@ from Basilisk.simulation.swig_common_model import *
 %include "swig_eigen.i"
 
 %include "sys_model.h"
-%include "../_GeneralModuleFiles/powerNodeBase.h"
+%include "../framework/powerNodeBase.h"
 %include "simplePowerSink.h"
 %include "swig_conly_data.i"
 
-%include "../../simMessages/powerNodeUsageSimMsg.h"
-%include "../../simFswInterfaceMessages/deviceStatusIntMsg.h"
+%include "../../sim_messages/powerNodeUsageSimMsg.h"
+%include "../../sim_fsw_interface_messages/deviceStatusIntMsg.h"
 
 GEN_SIZEOF(PowerNodeUsageSimMsg)
 GEN_SIZEOF(DeviceStatusIntMsg)

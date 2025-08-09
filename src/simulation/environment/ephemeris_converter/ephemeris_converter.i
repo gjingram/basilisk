@@ -38,7 +38,7 @@ namespace std {
 
 %include "sys_model.h"
 %include "ephemeris_converter.h"
-%include "../../simFswInterfaceMessages/ephemerisIntMsg.h"
+%include "../../sim_fsw_interface_messages/ephemerisIntMsg.h"
 GEN_SIZEOF(EphemerisIntMsg);
 
 %pythoncode %{

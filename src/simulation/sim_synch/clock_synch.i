@@ -28,7 +28,7 @@ from Basilisk.simulation.swig_common_model import *
 
 %include "sys_model.h"
 %include "clock_synch.h"
-%include "simMessages/syncClockSimMsg.h"
+%include "sim_messages/syncClockSimMsg.h"
 
 %pythoncode %{
 import sys

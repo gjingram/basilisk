@@ -25,7 +25,7 @@ from Basilisk.topLevelModules import pyswice
 from Basilisk import __path__
 bskPath = __path__[0]
 
-def planetPositionVelocity(planetName, time, ephemerisPath = '/supportData/EphemerisData/pck00010.tpc', observer = 'SSB', frame = 'J2000'):
+def planetPositionVelocity(planetName, time, ephemerisPath = '/data/ephemeris_data/pck00010.tpc', observer = 'SSB', frame = 'J2000'):
     """
         A convenience function to get planet position from spice
 
@@ -42,8 +42,8 @@ def planetPositionVelocity(planetName, time, ephemerisPath = '/supportData/Ephem
         position and velocity vector of planet in Solar System Barycenter inertial frame as lists [m], [m/s]
     """
 
-    pyswice.furnsh_c(bskPath + '/supportData/EphemerisData/de430.bsp')
-    pyswice.furnsh_c(bskPath + '/supportData/EphemerisData/naif0012.tls') #load leap seconds
+    pyswice.furnsh_c(bskPath + '/data/ephemeris_data/de430.bsp')
+    pyswice.furnsh_c(bskPath + '/data/ephemeris_data/naif0012.tls') #load leap seconds
     pyswice.furnsh_c(bskPath + ephemerisPath)
     positionVelocity = spkRead(planetName, time, frame, observer)
     position = positionVelocity[0:3] * 1000

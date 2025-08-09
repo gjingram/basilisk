@@ -131,7 +131,7 @@ typedef struct {
                                                                          required if ``numThr`` is greater than 0. */
     std::string starTrackerInMsgName = "star_tracker_state";    //!< [-] (Optional) Name of the incoming Star Tracker data
     int numRW = 0;                                              //!< [-] (Optional) Number of RW
-    int numThr = 0;                                             //!< [-] (Optional) Number of Thrusters
+    int numThr = 0;                                             //!< [-] (Optional) Number of thrusters
 
     int numCSS = 0;                                             //!< [-] (Private) Number of CCS sensors
     std::vector<MsgCurrStatus> rwInMsgID;                       //!< [-] (Private) ID of the incoming rw data

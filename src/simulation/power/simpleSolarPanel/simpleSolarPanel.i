@@ -32,16 +32,16 @@ from Basilisk.simulation.swig_common_model import *
 %include "swig_eigen.i"
 
 %include "sys_model.h"
-%include "../_GeneralModuleFiles/powerNodeBase.h"
+%include "../framework/powerNodeBase.h"
 %include "simpleSolarPanel.h"
 
 
 
-%include "../../simMessages/powerNodeUsageSimMsg.h"
-%include "../../simFswInterfaceMessages/deviceStatusIntMsg.h"
-%include "../../simMessages/scPlusStatesSimMsg.h"
-%include "../../simMessages/spicePlanetStateSimMsg.h"
-%include "../../simMessages/eclipseSimMsg.h"
+%include "../../sim_messages/powerNodeUsageSimMsg.h"
+%include "../../sim_fsw_interface_messages/deviceStatusIntMsg.h"
+%include "../../sim_messages/scPlusStatesSimMsg.h"
+%include "../../sim_messages/spicePlanetStateSimMsg.h"
+%include "../../sim_messages/eclipseSimMsg.h"
 
 GEN_SIZEOF(PowerNodeUsageSimMsg)
 GEN_SIZEOF(DeviceStatusIntMsg)

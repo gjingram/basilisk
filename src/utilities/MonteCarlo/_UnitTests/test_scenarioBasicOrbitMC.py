@@ -78,7 +78,7 @@ def myCreationFunction():
     planet = gravFactory.createEarth()
     planet.isCentralBody = True
     planet.useSphericalHarmParams = True
-    simIncludeGravBody.loadGravFromFile(bskPath + '/supportData/LocalGravData/GGM03S-J2-only.txt'
+    simIncludeGravBody.loadGravFromFile(bskPath + '/data/local_grav_data/GGM03S-J2-only.txt'
                                         , planet.spherHarm
                                         , 2
                                         )

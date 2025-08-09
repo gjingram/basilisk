@@ -30,10 +30,10 @@ from Basilisk.simulation.swig_common_model import *
 
 %include "sys_model.h"
 %include "magnetometer.h"
-%include "../../simMessages/scPlusStatesSimMsg.h"
-%include "../../simMessages/magneticFieldSimMsg.h"
-%include "../../simMessages/tamDataSimMsg.h"
-%include "../../simFswInterfaceMessages/tamSensorIntMsg.h"
+%include "../../sim_messages/scPlusStatesSimMsg.h"
+%include "../../sim_messages/magneticFieldSimMsg.h"
+%include "../../sim_messages/tamDataSimMsg.h"
+%include "../../sim_fsw_interface_messages/tamSensorIntMsg.h"
 GEN_SIZEOF(TAMDataSimMsg);
 GEN_SIZEOF(TAMSensorIntMsg);
 GEN_SIZEOF(SCPlusStatesSimMsg);

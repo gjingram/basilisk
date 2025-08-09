@@ -32,9 +32,9 @@ from Basilisk.simulation.swig_common_model import *
 %include "sys_model.h"
 %include "albedo.h"
 
-%include "../../simMessages/albedoSimMsg.h"
-%include "../../simMessages/scPlusStatesSimMsg.h"
-%include "../../simMessages/spicePlanetStateSimMsg.h"
+%include "../../sim_messages/albedoSimMsg.h"
+%include "../../sim_messages/scPlusStatesSimMsg.h"
+%include "../../sim_messages/spicePlanetStateSimMsg.h"
 
 GEN_SIZEOF(AlbedoSimMsg)
 GEN_SIZEOF(SpicePlanetStateSimMsg)

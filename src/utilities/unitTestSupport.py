@@ -19,7 +19,7 @@
 
 
 #
-#   Unit Test Support Script
+#   Unit Test support Script
 #
 import math
 import os,errno
@@ -301,7 +301,7 @@ def compareDoubleArray(trueStates, dataStates, accuracy, msg, testFailCount, tes
 
 def writeTableLaTeX(tableName, tableHeaders, caption, array, path):
 
-    texFileName = path+"/../_Documentation/AutoTeX/"+tableName+".tex"
+    texFileName = path+"/../doc/AutoTeX/"+tableName+".tex"
 
     if not os.path.exists(os.path.dirname(texFileName)):
         try:
@@ -328,7 +328,7 @@ def writeTableLaTeX(tableName, tableHeaders, caption, array, path):
 
 def writeTeXSnippet(snippetName, texSnippet, path):
 
-    texFileName = path+"/../_Documentation/AutoTeX/"+snippetName+".tex"
+    texFileName = path+"/../doc/AutoTeX/"+snippetName+".tex"
 
     if not os.path.exists(os.path.dirname(texFileName)):
         try:
@@ -368,7 +368,7 @@ def saveFigurePDF(figureName, plt, path):
 
 def writeFigureLaTeX(figureName, caption, plt, format, path):
 
-    texFileName = path + "/../_Documentation/AutoTeX/" + figureName + ".tex"
+    texFileName = path + "/../doc/AutoTeX/" + figureName + ".tex"
     if not os.path.exists(os.path.dirname(texFileName)):
         try:
             os.makedirs(os.path.dirname(texFileName))
@@ -384,7 +384,7 @@ def writeFigureLaTeX(figureName, caption, plt, format, path):
         texFigure.write(r'\end{figure}')
         texFigure.close()
 
-        texFileName = path + "/../_Documentation/AutoTeX/" + figureName + ".pdf"
+        texFileName = path + "/../doc/AutoTeX/" + figureName + ".pdf"
         plt.savefig(texFileName, transparent=True)
 
     return
@@ -471,7 +471,7 @@ def timeStringToGregorianUTCMsg(DateSpice, **kwargs):
             print('ERROR: dataPath must be a string argument')
             exit(1)
     else:
-        dataPath = bskPath +'/supportData/EphemerisData/'  # default value
+        dataPath = bskPath +'/data/ephemeris_data/'  # default value
 
     # load spice kernal and convert the string into a UTC date/time string
     pyswice.furnsh_c(dataPath + 'naif0012.tls')

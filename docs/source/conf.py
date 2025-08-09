@@ -236,10 +236,10 @@ class fileCrawler():
         # Remove any directories that shouldn't be added directly to the website
         removeList = []
         for i in range(len(dirs_in_dir)):
-            if "_Documentation" in dirs_in_dir[i] or \
+            if "doc" in dirs_in_dir[i] or \
                     "__pycache__" in dirs_in_dir[i] or \
                     "_VizFiles" in dirs_in_dir[i] or \
-                    "Support" in dirs_in_dir[i] or \
+                    "support" in dirs_in_dir[i] or \
                     "cmake" in dirs_in_dir[i] or \
                     "topLevelModules" in dirs_in_dir[i] or \
                     "outputFiles" in dirs_in_dir[i] or \
@@ -257,7 +257,7 @@ class fileCrawler():
                     "vizMessage.pb.cc" in files_in_dir[i] or \
                     "vizMessage.pb.h" in files_in_dir[i] or \
                     "vizMessage.proto" in files_in_dir[i] or \
-                    "EGM9615.h" in files_in_dir[i] or \
+                    "egm_9615.h" in files_in_dir[i] or \
                     "reportconf.py" in files_in_dir[i]:
                 removeList.extend([i])
         for i in sorted(removeList, reverse=True):
@@ -304,10 +304,10 @@ class fileCrawler():
             # Title the page
             lines += name + "\n" + "=" * len(name) + "\n\n"
 
-            # pull in folder _doc.rst file if it exists
+            # pull in folder doc.rst file if it exists
             try:
                 pathToFolder, folderName = dir_paths[0].split(name)
-                docFileName = os.path.join(os.path.join(pathToFolder, name), '_doc.rst')
+                docFileName = os.path.join(os.path.join(pathToFolder, name), 'doc.rst')
                 if os.path.isfile(docFileName):
                     with open(docFileName, 'r') as docFile:
                         docContents = docFile.read()
@@ -375,8 +375,8 @@ class fileCrawler():
                 lines = ""
                 lines += ".. _" + c_file_basename + ":\n\n"
                 if "fswMessages" in src_path \
-                        or "simFswInterfaceMessages" in src_path \
-                        or "simMessages" in src_path\
+                        or "sim_fsw_interface_messages" in src_path \
+                        or "sim_messages" in src_path\
                         or "utilities" in src_path:
                     lines += c_file_basename + "\n" + "=" * (len(c_file_basename) + 8) + "\n\n"
                 else:
@@ -399,7 +399,7 @@ class fileCrawler():
                 # Populate the module's .rst
                 for module_file in module_files_temp:
                     if ".h" in module_file:
-                        if name == "_GeneralModuleFiles":
+                        if name == "framework":
                             name += str(self.counter)
                             self.counter += 1
                         lines += """.. autodoxygenfile:: """ + module_file + """\n   :project: """ + name + """\n\n"""
@@ -479,14 +479,14 @@ if rebuild:
         shutil.rmtree(officialDoc)
     # adjust the fileCrawler path to a local folder to just build a sub-system
     breathe_projects_source = fileCrawler.run(officialSrc)
-    # breathe_projects_source = fileCrawler.run(officialSrc+"/fswAlgorithms/fswMessages")
-    # breathe_projects_source = fileCrawler.run(officialSrc+"/fswAlgorithms")
-    # breathe_projects_source = fileCrawler.run(officialSrc+"/simulation/simFswInterfaceMessages")
-    # breathe_projects_source = fileCrawler.run(officialSrc+"/fswAlgorithms/_fswTemplateFolder")
+    # breathe_projects_source = fileCrawler.run(officialSrc+"/fsw_algorithms/fswMessages")
+    # breathe_projects_source = fileCrawler.run(officialSrc+"/fsw_algorithms")
+    # breathe_projects_source = fileCrawler.run(officialSrc+"/simulation/sim_fsw_interface_messages")
+    # breathe_projects_source = fileCrawler.run(officialSrc+"/fsw_algorithms/_fswTemplateFolder")
     # breathe_projects_source = fileCrawler.run(officialSrc+"/simulation/vizard")
     # breathe_projects_source = fileCrawler.run(officialSrc+"/examples")
     # breathe_projects_source = fileCrawler.run(officialSrc+"/utilities")
-    breathe_projects_source = fileCrawler.run("../../externalTools")
+    breathe_projects_source = fileCrawler.run("../../external")
     with open("breathe.data", 'wb') as f:
         pickle.dump(breathe_projects_source, f)
 else:
@@ -498,5 +498,5 @@ else:
 #TODO: Pickle the breathe_project_source and load that back in
 
 # Example of how to link C with Breathe
-# breathe_projects_source = {"BasiliskFSW": ("../../src/fswAlgorithms/attControl/MRP_Feedback", ['MRP_Feedback.c', 'MRP_Feedback.h'])}
+# breathe_projects_source = {"BasiliskFSW": ("../../src/fsw_algorithms/attControl/MRP_Feedback", ['MRP_Feedback.c', 'MRP_Feedback.h'])}
 

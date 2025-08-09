@@ -19,8 +19,8 @@
 
 #include <iostream>
 #include <math.h>
-#include "gauss_markov.h"
-#include "linearAlgebra.h"
+#include "utilities/gauss_markov.h"
+#include "utilities/linear_algebra.h"
 
 /*! The constructor initialies the random number generator used for the walks*/
 GaussMarkov::GaussMarkov()

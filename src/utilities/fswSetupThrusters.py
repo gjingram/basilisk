@@ -20,7 +20,7 @@
 
 
 #
-#   FSW Setup Utilities for Thrusters
+#   FSW Setup Utilities for thrusters
 #
 
 import sys, os, inspect

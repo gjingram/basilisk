@@ -30,8 +30,8 @@ from Basilisk.simulation.swig_common_model import *
 %include "swig_eigen.i"
 %include "sys_model.h"
 %include "imu_sensor.h"
-%include "simMessages/scPlusStatesSimMsg.h"
-%include "../simFswInterfaceMessages/imuSensorIntMsg.h"
+%include "sim_messages/scPlusStatesSimMsg.h"
+%include "../sim_fsw_interface_messages/imuSensorIntMsg.h"
 GEN_SIZEOF(SCPlusStatesSimMsg)
 GEN_SIZEOF(IMUSensorIntMsg)
 

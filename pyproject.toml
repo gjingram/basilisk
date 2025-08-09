@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "basilisk"
+version = "0.1.0"
+description = ""
+authors = ["Gabe Ingram <gabriel.ingram@colorado.edu>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+helics = {extras = ["cli"], version = "^3.4.0"}
+
+
+[tool.poetry.group.dev.dependencies]
+cppyy = "^3.0.0"
+cython = "^3.0.2"
+eigency = "^3.4.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

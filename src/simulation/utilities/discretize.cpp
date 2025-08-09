@@ -17,11 +17,11 @@
 
  */
 
-#include "discretize.h"
 #include <iostream>
 #include <string>
 #include <math.h>
-#include "linearAlgebra.h"
+#include "utilities/linear_algebra.h"
+#include "utilities/discretize.h"
 
 /*! The constructor initialies the random number generator used for the walks*/
 Discretize::Discretize()

@@ -315,6 +315,6 @@ def loadGravFromFile(fileName, spherHarm, maxDeg=2):
             -----
             This function is a convenience utility for loading in the spherical harmonics
             coefficients from a data file.  The default harmonic degree is 2 unless specified.
-            Note that this function calls the gravityEffector function loadGravFromFile().
+            Note that this function calls the gravity_effector function loadGravFromFile().
     """
     loadGravFromFile_python(fileName, spherHarm, maxDeg)

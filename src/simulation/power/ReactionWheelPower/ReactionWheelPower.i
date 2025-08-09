@@ -25,12 +25,12 @@
 
 %include "swig_common_model.i"
 %include "sys_model.h"
-%include "../_GeneralModuleFiles/powerNodeBase.h"
+%include "../framework/powerNodeBase.h"
 %include "ReactionWheelPower.h"
 
-%include "../../simMessages/powerNodeUsageSimMsg.h"
-%include "../../simFswInterfaceMessages/deviceStatusIntMsg.h"
-%include "../../simMessages/rwConfigLogSimMsg.h"
+%include "../../sim_messages/powerNodeUsageSimMsg.h"
+%include "../../sim_fsw_interface_messages/deviceStatusIntMsg.h"
+%include "../../sim_messages/rwConfigLogSimMsg.h"
 
 GEN_SIZEOF(PowerNodeUsageSimMsg)
 GEN_SIZEOF(DeviceStatusIntMsg)

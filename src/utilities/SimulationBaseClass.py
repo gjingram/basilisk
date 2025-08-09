@@ -376,7 +376,7 @@ class SimBaseClass:
             for interface in process.intRefs:
                 interface.discoverAllMessages()
 
-        # Create a new set into which we add the SWIG'd simMessages definitions
+        # Create a new set into which we add the SWIG'd sim_messages definitions
         # and union it with the simulation's modules set. We do this so that
         # python modules can have message structs resolved
         self.allModules = set()
@@ -559,7 +559,7 @@ class SimBaseClass:
         moduleFound = ''
 
         if len(self.allModules) == 0:
-            # Create a new set into which we add the SWIG'd simMessages definitions
+            # Create a new set into which we add the SWIG'd sim_messages definitions
             # and union it with the simulation's modules set. We do this so that
             # python modules can have message structs resolved
             self.allModules = set()
@@ -660,7 +660,7 @@ class SimBaseClass:
         headerList = list(headerDict.keys())
 
         if len(self.allModules) == 0:
-            # Create a new set into which we add the SWIG'd simMessages definitions
+            # Create a new set into which we add the SWIG'd sim_messages definitions
             # and union it with the simulation's modules set. We do this so that
             # python modules can have message structs resolved
             self.allModules = set()

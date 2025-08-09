@@ -1,24 +1,42 @@
-cmake_minimum_required(VERSION 3.14)
 
-file(GLOB basilisk_src
-    "*.h"
-    "*.cpp"
-    "*.c"
-    "*.i"
+add_library(
+        basilisk_logging OBJECT
+        bsk_logging.cpp
+        bsk_logging.h
+        bsk_print.h
 )
 
-add_library(SimUtilities STATIC ${basilisk_src})
+add_library(
+        basilisk_util OBJECT
+        astro_constants.h
+        avs_eigen_support.cpp
+        avs_eigen_support.h
+        discretize.cpp
+        discretize.h
+        gauss_markov.cpp
+        gauss_markov.h
+        geodetic_conversion.cpp
+        geodetic_conversion.h
+        linear_algebra.c
+        linear_algebra.h
+        macros.h
+        orbital_motion.c
+        orbital_motion.h
+        rigid_body_kinematics.c
+        rigid_body_kinematics.h
+        saturate.cpp
+        saturate.h
+        signal_condition.c
+        signal_condition.h
+        sim_definitions.h
+)
+target_link_libraries(basilisk_util PUBLIC Eigen3::Eigen)
 
-STRING(LENGTH ${CMAKE_SOURCE_DIR} DIR_NAME_START)
-MATH(EXPR DIR_NAME_START "${DIR_NAME_START} + 1")
-STRING(SUBSTRING ${CMAKE_CURRENT_SOURCE_DIR} ${DIR_NAME_START} -1 DIR_NAME_STRING)
-set_target_properties(SimUtilities PROPERTIES
-FOLDER "${DIR_NAME_STRING}")
+add_library(
+        bsk_util SHARED
+        $<TARGET_OBJECTS:basilisk_logging>
+        $<TARGET_OBJECTS:basilisk_util>
+)
+target_link_libraries(bsk_util PUBLIC Eigen3::Eigen)
 
-if(NOT WIN32)
-	target_compile_options(SimUtilities PUBLIC "-fPIC")
-endif()
-target_include_directories(SimUtilities PUBLIC "${CMAKE_SOURCE_DIR}/simulation")
-set_target_properties(SimUtilities PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/Basilisk")
-set_target_properties(SimUtilities PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_DEBUG "${CMAKE_BINARY_DIR}/Basilisk")
-set_target_properties(SimUtilities PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELEASE "${CMAKE_BINARY_DIR}/Basilisk")
+add_subdirectory(test)

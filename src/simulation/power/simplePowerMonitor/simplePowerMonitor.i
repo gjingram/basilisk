@@ -49,13 +49,13 @@ from Basilisk.simulation.swig_common_model import *
 %include "std_string.i"
 %include "swig_eigen.i"
 %include "sys_model.h"
-%include "../_GeneralModuleFiles/powerStorageBase.h"
+%include "../framework/powerStorageBase.h"
 %include "simplePowerMonitor.h"
 %include "swig_conly_data.i"
 
 
-%include "../../simMessages/powerNodeUsageSimMsg.h"
-%include "../../simMessages/powerStorageStatusSimMsg.h"
+%include "../../sim_messages/powerNodeUsageSimMsg.h"
+%include "../../sim_messages/powerStorageStatusSimMsg.h"
 
 GEN_SIZEOF(PowerNodeUsageSimMsg)
 GEN_SIZEOF(PowerStorageStatusSimMsg)

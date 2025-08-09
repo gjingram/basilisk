@@ -29,10 +29,10 @@ from Basilisk.simulation.swig_common_model import *
 %include "std_vector.i"
 
 %include "sys_model.h"
-%include "simMessages/spicePlanetStateSimMsg.h"
-%include "simMessages/spiceTimeSimMsg.h"
+%include "sim_messages/spicePlanetStateSimMsg.h"
+%include "sim_messages/spiceTimeSimMsg.h"
 %include "spice_interface.h"
-%include "../../simMessages/epochSimMsg.h"
+%include "../../sim_messages/epochSimMsg.h"
 
 
 GEN_SIZEOF(SpicePlanetStateSimMsg);

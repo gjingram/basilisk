@@ -1,0 +1,59 @@
+/*
+ ISC License
+
+ Copyright (c) 2016, Autonomous Vehicle Systems Lab, University of Colorado at Boulder
+
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+ */
+%module reactionWheelStateEffector
+%{
+   #include "reaction_wheel_state_effector.h"
+
+%}
+
+%pythoncode %{
+from Basilisk.simulation.swig_common_model import *
+%}
+%include "std_string.i"
+%include "swig_eigen.i"
+%include "swig_conly_data.i"
+
+%include "sys_model.h"
+%include "../framework/stateData.h"
+%include "../framework/stateEffector.h"
+%include "../framework/dynamicEffector.h"
+%include "../framework/dynParamManager.h"
+%include "../framework/dynamicObject.h"
+%include "reactionWheelStateEffector.h"
+%include "sim_fsw_interface_messages/rwSpeedIntMsg.h"
+%include "sim_messages/rwCmdSimMsg.h"
+%include "sim_messages/rwConfigSimMsg.h"
+%include "sim_messages/rwConfigLogSimMsg.h"
+%include "sim_fsw_interface_messages/macroDefinitions.h"
+%include "sim_fsw_interface_messages/arrayMotorTorqueIntMsg.h"
+
+//%include "spacecraftPlus.h"
+//%include "hubEffector.h"
+
+%include "std_vector.i"
+namespace std {
+    %template(RWConfigVector) vector<RWConfigSimMsg>;
+	%template(RWCmdVector) vector<RWCmdSimMsg>;
+}
+GEN_SIZEOF(ArrayMotorTorqueIntMsg);
+GEN_SIZEOF(RWConfigLogSimMsg);
+%pythoncode %{
+import sys
+protectAllClasses(sys.modules[__name__])
+%}

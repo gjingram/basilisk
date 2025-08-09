@@ -31,8 +31,8 @@ from Basilisk.simulation.swig_common_model import *
 %include "stdint.i"
 %include "sys_model.h"
 %include "star_tracker.h"
-%include "simFswInterfaceMessages/stSensorIntMsg.h"
-%include "simMessages/scPlusStatesSimMsg.h"
+%include "sim_fsw_interface_messages/stSensorIntMsg.h"
+%include "sim_messages/scPlusStatesSimMsg.h"
 GEN_SIZEOF(SCPlusStatesSimMsg)
 GEN_SIZEOF(SCPlusStatesSimMsg)
 GEN_SIZEOF(STSensorIntMsg)

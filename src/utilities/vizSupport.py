@@ -21,7 +21,7 @@
 
 
 #
-#   Unit Test Support Script
+#   Unit Test support Script
 #
 import sys, os
 from matplotlib import colors

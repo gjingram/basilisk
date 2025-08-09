@@ -34,13 +34,13 @@ namespace std {
 %include "sys_model.h"
 %include "coarse_sun_sensor.h"
 
-%include "../../simMessages/scPlusStatesSimMsg.h"
-%include "../../simMessages/spicePlanetStateSimMsg.h"
-%include "../../simMessages/cssRawDataSimMsg.h"
-%include "../../simMessages/cssConfigLogSimMsg.h"
-%include "../../simMessages/albedoSimMsg.h"
-%include "../../simMessages/eclipseSimMsg.h"
-%include "../../simFswInterfaceMessages/cssArraySensorIntMsg.h"
+%include "../../sim_messages/scPlusStatesSimMsg.h"
+%include "../../sim_messages/spicePlanetStateSimMsg.h"
+%include "../../sim_messages/cssRawDataSimMsg.h"
+%include "../../sim_messages/cssConfigLogSimMsg.h"
+%include "../../sim_messages/albedoSimMsg.h"
+%include "../../sim_messages/eclipseSimMsg.h"
+%include "../../sim_fsw_interface_messages/cssArraySensorIntMsg.h"
 GEN_SIZEOF(CSSRawDataSimMsg);
 GEN_SIZEOF(AlbedoSimMsg);
 GEN_SIZEOF(EclipseSimMsg);
